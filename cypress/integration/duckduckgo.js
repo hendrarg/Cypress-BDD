@@ -2,7 +2,7 @@ import { When, Then } from "cypress-cucumber-preprocessor";
 
 When("I visit duckduckgo.com", () => {
   cy.log("Visiting DuckDuckGo");
-  cy.visit("https://www.duckduckgo.com");
+  cy.visit("/");
 });
 
 Then("I should see a search bar", () => {
