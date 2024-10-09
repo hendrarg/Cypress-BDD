@@ -13,7 +13,7 @@ Feature: WebdriverUniversity - contact us page
     Scenario: Invalid Contact Us Form Submission
         Given I navigate to the webdriveruniversity home page
         When I click on the contact us button
-        And I type a first name 
+        And I type a first name
         And I type a last name
         And I enter a comment
         And I click submit button
@@ -28,3 +28,17 @@ Feature: WebdriverUniversity - contact us page
         And I type a specific word "helo123" and number 6789 within the comment input field
         And I click submit button
         Then I should be presented with a successful contact us submission message
+
+    Scenario Outline: Valid Contact Us Page
+        Given I navigate to the webdriveruniversity home page
+        When I click on the contact us button
+        And I type a <firstName> and a '<lastName>'
+        And I type a '<email>' and a comment '<comment>'
+        And I click submit button
+        Then I should be presented with header text '<message>'
+
+        Examples:
+            | firstName | lastName | email           | comment           | message                      |
+            | Hendra    | Rizal    | hendra@mail.com | Hello how are u?  | Thank You for your Message!  |
+            | Rizal     | Gunawan  | harigu@mail.com | Second Scenario   | Thank You for your Message!  |
+            | Don       | Roger    | donroger        | Scenario negative | Error: Invalid email address |

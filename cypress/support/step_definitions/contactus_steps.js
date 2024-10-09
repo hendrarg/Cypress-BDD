@@ -44,3 +44,17 @@ Then("I type a email address {string}", (email) => {
 Then("I type a specific word {string} and number {int} within the comment input field", (word, number) => {
   cy.get('textarea[name="message"]').type(word).type(number);
 });
+
+Then("I type a {word} and a {string}", (firstName, lastName) => {
+  cy.get('[name="first_name"]').type(firstName);
+  cy.get('[name="last_name"]').type(lastName);
+});
+
+Then("I type a {string} and a comment {string}", (email, comment) => {
+  cy.get('[name="email"]').type(email);
+  cy.get('textarea[name="message"]').type(comment);
+});
+
+Then("I should be presented with header text {string}", (message) => {
+  cy.xpath("//h1 | //body").contains(message);
+});
