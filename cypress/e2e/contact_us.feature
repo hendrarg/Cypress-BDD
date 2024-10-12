@@ -38,5 +38,5 @@ Feature: WebdriverUniversity - contact us page
         Examples:
             | firstName | lastName | email           | comment           | message                      |
             | Hendra    | Rizal    | hendra@mail.com | Hello how are u?  | Thank You for your Message!  |
-            | Rizal     | Gunawan  | harigu@mail.com | Second Scenario   | Thank You for your Message!  |
+            | Rizal     | Gunawan  | harigu@mail.com | Second Scenario   | Thank You for your Message!j |
             | Don       | Roger    | donroger        | Scenario negative | Error: Invalid email address |
