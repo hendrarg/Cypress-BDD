@@ -1,2 +1,20 @@
 node_modules
-node_modules
+
+# Cypress test artifacts
+cypress/screenshots
+cypress/videos
+cypress/downloads
+
+# Cypress reports (generated on each run)
+cypress/reports/cucumber-html
+cypress/reports/cucumber-json
+cypress/reports/cucumber-ndjson
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+

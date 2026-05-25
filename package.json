@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@cucumber/language-service": "^1.6.0",
+    "lodash": "^4.18.1",
     "prompt-sync": "^4.2.0"
   },
   "cypress-cucumber-preprocessor": {

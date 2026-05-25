@@ -6,11 +6,6 @@ Before(() => {
   cy.clearAllLocalStorage();
 });
 
-// Before({ tags: "@smoke" }, () => {
-//   cy.log("Executes before each scenario/test.");
-//   cy.clearAllLocalStorage();
-// });
-
 After(() => {
   cy.log("Executes after each scenario/test.");
   cy.clearAllLocalStorage();
