@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cypress": {
+      "type": "url",
+      "url": "https://mcp.cypress.io/mcp"
+    }
+  }
+}
