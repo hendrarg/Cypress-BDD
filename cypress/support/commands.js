@@ -26,3 +26,70 @@
 Cypress.Commands.add("clickAndOpenLink_InSameTab", (selector) => {
   cy.get(selector).invoke("removeAttr", "target").click();
 });
+
+// ── Reqres API Commands ──────────────────────────────────────────────────────
+
+Cypress.Commands.add("reqresLogin", (email, password) => {
+  cy.request({
+    method: "POST",
+    url: `${Cypress.env("apiUrl")}/api/login`,
+    headers: {
+      "x-api-key": Cypress.env("apiKey"),
+      "Content-Type": "application/json",
+    },
+    body: { email, password },
+  });
+});
+
+Cypress.Commands.add("reqresListUsers", () => {
+  cy.request({
+    method: "GET",
+    url: `${Cypress.env("apiUrl")}/api/users`,
+    headers: { "x-api-key": Cypress.env("apiKey") },
+  });
+});
+
+Cypress.Commands.add("reqresSingleUser", (userId) => {
+  cy.request({
+    method: "GET",
+    url: `${Cypress.env("apiUrl")}/api/users/${userId}`,
+    headers: { "x-api-key": Cypress.env("apiKey") },
+  });
+});
+
+Cypress.Commands.add("reqresUpdateUser", (userId, name, job) => {
+  cy.request({
+    method: "PUT",
+    url: `${Cypress.env("apiUrl")}/api/users/${userId}`,
+    headers: {
+      "x-api-key": Cypress.env("apiKey"),
+      "Content-Type": "application/json",
+    },
+    body: { name, job },
+  });
+});
+
+Cypress.Commands.add("reqresDeleteUser", (userId) => {
+  cy.request({
+    method: "DELETE",
+    url: `${Cypress.env("apiUrl")}/api/users/${userId}`,
+    headers: { "x-api-key": Cypress.env("apiKey") },
+  });
+});
+
+Cypress.Commands.add("reqresListResources", () => {
+  cy.request({
+    method: "GET",
+    url: `${Cypress.env("apiUrl")}/api/unknown`,
+    headers: { "x-api-key": Cypress.env("apiKey") },
+  });
+});
+
+Cypress.Commands.add("reqresGenericResource", (page = 1) => {
+  cy.request({
+    method: "GET",
+    url: `${Cypress.env("apiUrl")}/api/products`,
+    headers: { "x-api-key": Cypress.env("apiKey") },
+    qs: { page },
+  });
+});

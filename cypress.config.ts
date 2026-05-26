@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
+import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
@@ -7,6 +7,10 @@ export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
     video: false,
+    env: {
+      apiUrl: "https://reqres.in",
+      apiKey: "free_user_3CO4gRX8WiMsAeqp1WcQiafcVON",
+    },
     async setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions): Promise<Cypress.PluginConfigOptions> {
       // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
       await addCucumberPreprocessorPlugin(on, config);

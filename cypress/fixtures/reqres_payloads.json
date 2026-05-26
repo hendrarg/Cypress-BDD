@@ -1,0 +1,10 @@
+{
+  "login": {
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+  },
+  "updateUser": {
+    "name": "morpheus",
+    "job": "zion resident"
+  }
+}
